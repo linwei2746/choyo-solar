@@ -1,0 +1,37 @@
+:root {
+    /* 色彩：和纸底色 + 墨绿 + 柿色（太阳） */
+    --paper: #f4f1ea;
+    --paper-2: #ebe5d8;
+    --paper-3: #e1d9c8;
+    --ink: #1c2420;
+    --ink-2: #4a534e;
+    --ink-3: #868c85;
+    --line: rgba(28, 36, 32, 0.14);
+    --line-strong: rgba(28, 36, 32, 0.32);
+    --sun: #d9822b;
+    --sun-deep: #b5651a;
+    --leaf: #22362c;
+    --leaf-2: #2e4a3c;
+    --white: #fffdf8;
+
+    /* 字体系统 */
+    --font-jp: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+    --font-min: "Shippori Mincho B1", "Hiragino Mincho ProN", "Yu Mincho", serif;
+    --font-en: "Jost", "Zen Kaku Gothic New", sans-serif;
+
+    /* 布局 */
+    --header-h: 84px;
+    --wrap: 1240px;
+    --gutter: clamp(16px, 4vw, 48px);
+    --section-y: clamp(88px, 12vw, 160px);
+
+    /* 动效 */
+    --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media screen and (max-width: 768px) {
+    :root {
+        --header-h: 64px;
+    }
+}
