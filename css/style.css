@@ -61,7 +61,10 @@ summary {
 
 .site-header {
     position: fixed;
-    inset: 0 0 auto 0;
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: 0;
     height: var(--header-h);
     z-index: 900;
     display: flex;
@@ -225,7 +228,10 @@ summary {
 
 .drawer {
     position: fixed;
-    inset: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     z-index: 850;
     background: var(--leaf);
     color: var(--paper);
@@ -528,7 +534,10 @@ section {
 
 .hero-visual .main {
     position: absolute;
-    inset: 0 0 64px 0;
+    top: 0;
+    right: 0;
+    bottom: 64px;
+    left: 0;
     overflow: hidden;
 }
 
@@ -650,7 +659,10 @@ section {
     }
 
     .hero-visual .main {
-        inset: 0 0 40px 0;
+        top: 0;
+        right: 0;
+        bottom: 40px;
+        left: 0;
     }
 
     .hero-visual .sub {
@@ -747,7 +759,10 @@ section {
 
 .compare-bar i {
     position: absolute;
-    inset: 0 auto 0 0;
+    top: 0;
+    right: auto;
+    bottom: 0;
+    left: 0;
     width: var(--w);
     background: var(--ink);
     transform-origin: left;
@@ -1433,13 +1448,19 @@ section {
 .cta-sun::after {
     content: "";
     position: absolute;
-    inset: 9%;
+    top: 9%;
+    right: 9%;
+    bottom: 9%;
+    left: 9%;
     border-radius: 50%;
     border: 1px solid rgba(255, 253, 248, 0.2);
 }
 
 .cta-sun::after {
-    inset: 20%;
+    top: 20%;
+    right: 20%;
+    bottom: 20%;
+    left: 20%;
     border: none;
     background: rgba(255, 253, 248, 0.08);
 }
@@ -1820,5 +1841,38 @@ section {
         font-size: 0.82rem;
         letter-spacing: 0.02em;
         padding-right: 10px;
+    }
+}
+
+/* =========================================================
+   旧浏览器兜底（iOS 14 及以下不支持 aspect-ratio）
+   ========================================================= */
+@supports not (aspect-ratio: 1 / 1) {
+    .hero-visual .sub {
+        height: 0;
+        padding-top: 45%;
+    }
+
+    .svc-img {
+        position: relative;
+        height: 0;
+        padding-top: 75%;
+    }
+
+    .svc-img img {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    @media screen and (max-width: 900px) {
+        .hero-visual {
+            height: 0;
+            padding-top: 85%;
+        }
+
+        .hero-visual .sub {
+            padding-top: 50%;
+        }
     }
 }
