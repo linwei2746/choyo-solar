@@ -1,0 +1,7 @@
+{
+  "name": "choyo-solar",
+  "private": true,
+  "scripts": {
+    "serve": "python -m http.server 5520"
+  }
+}
