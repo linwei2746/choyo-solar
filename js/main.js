@@ -59,7 +59,36 @@
         });
     }
 
-    // 3. 动画
+    // 3. 首屏轮播（不依赖 GSAP）
+    const slides = document.querySelectorAll('.hero-slide');
+    const dotsBox = document.querySelector('.hero-dots');
+    if (slides.length > 1 && dotsBox) {
+        let index = 0;
+        let timer = null;
+        const dots = [...slides].map((_, i) => {
+            const b = document.createElement('button');
+            b.type = 'button';
+            b.setAttribute('aria-label', `${i + 1}枚目の画像`);
+            b.addEventListener('click', () => { show(i); restart(); });
+            dotsBox.appendChild(b);
+            return b;
+        });
+        const show = (i) => {
+            slides[index].classList.remove('is-active');
+            dots[index].classList.remove('is-active');
+            index = i;
+            slides[index].classList.add('is-active');
+            dots[index].classList.add('is-active');
+        };
+        const restart = () => {
+            clearInterval(timer);
+            if (!reduceMotion) timer = setInterval(() => show((index + 1) % slides.length), 6000);
+        };
+        dots[0].classList.add('is-active');
+        restart();
+    }
+
+    // 4. 动画
     if (!window.gsap || !window.ScrollTrigger || reduceMotion) {
         document.documentElement.classList.add('no-gsap');
         return;
@@ -67,22 +96,14 @@
     gsap.registerPlugin(ScrollTrigger);
     if (lenis) lenis.on('scroll', ScrollTrigger.update);
 
-    // 首屏
-    const hero = document.querySelector('.hero');
-    if (hero) {
-        const tl = gsap.timeline({ defaults: { ease: 'expo.out' } });
-        tl.from('.hero-title', { y: 40, opacity: 0, duration: 1.4 })
-            .fromTo('.hero-visual .main', { clipPath: 'inset(0 0 0 100%)' }, { clipPath: 'inset(0 0 0 0%)', duration: 1.6, ease: 'expo.inOut' }, 0)
-            .from('.hero-visual .main img', { scale: 1.25, duration: 2.2 }, 0)
-            .fromTo('.hero-visual .sub', { clipPath: 'inset(100% 0 0 0)' }, { clipPath: 'inset(0% 0 0 0)', duration: 1.3, ease: 'expo.inOut' }, 0.6)
-            .from('.hero-side > *', { y: 24, opacity: 0, duration: 1.2, stagger: 0.08 }, 0.5)
-            .from('.hero-foot', { opacity: 0, duration: 1 }, 1.1);
+    // 首屏文字
+    if (document.querySelector('.hero-copy')) {
+        gsap.from('.hero-copy > *', { y: 24, opacity: 0, duration: 1.2, stagger: 0.12, ease: 'expo.out', delay: 0.2 });
     }
 
     // 子页面标题
-    if (document.querySelector('.page-head')) {
-        gsap.from('.page-en, .page-title, .page-lead', { y: 30, opacity: 0, duration: 1.2, stagger: 0.1, ease: 'expo.out' });
-        gsap.fromTo('.page-visual', { clipPath: 'inset(0 100% 0 0)' }, { clipPath: 'inset(0 0% 0 0)', duration: 1.6, ease: 'expo.inOut', delay: 0.2 });
+    if (document.querySelector('.page-hero')) {
+        gsap.from('.page-hero-ttl, .page-hero-en', { x: -30, opacity: 0, duration: 1.1, stagger: 0.1, ease: 'expo.out' });
     }
 
     // 滚动入场

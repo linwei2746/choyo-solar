@@ -1,6 +1,6 @@
 /**
- * 页脚 + 咨询引导条 集中管理脚本
- * 在 <div id="footer-container" data-cta="false"> 上设置 data-cta="false" 可隐藏引导条（如咨询页）
+ * 咨询栏 + 页脚 集中管理脚本
+ * 在 <div id="footer-container" data-cta="false"> 上设置 data-cta="false" 可隐藏咨询栏
  */
 (() => {
     const container = document.getElementById('footer-container');
@@ -11,76 +11,57 @@
     const telHref = `tel:${S.tel.replace(/-/g, '')}`;
     const year = new Date().getFullYear();
 
-    const cta = `
-    <section class="cta" id="contact">
-        <div class="cta-sun" aria-hidden="true"></div>
-        <div class="wrap cta-inner">
-            <div data-reveal>
-                <p class="sec-label">Contact</p>
-                <h2 class="cta-title">まずは、屋根を<br>見せてください。</h2>
-                <p class="cta-text">現地調査・お見積りは無料です。<br class="pc-only">設置に向かない屋根の場合は、正直にそうお伝えします。</p>
+    const contact = `
+    <section class="contact bg-grid" id="contact">
+        <div class="wrap">
+            <div class="bubble" data-reveal>
+                <h2 class="bubble-ttl">お気軽にお問い合わせください</h2>
             </div>
-            <div class="cta-actions" data-reveal>
-                <a class="cta-tel" href="${telHref}">
-                    <small>お電話でのご相談（${S.telHours.replace('受付 ', '')}）</small>
-                    <strong>${S.tel}</strong>
-                </a>
-                <a class="btn" href="mailto:${S.email}">メールでお問い合わせ<span class="arrow"></span></a>
+            <div class="contact-cards" data-stagger>
+                <div class="contact-card">
+                    <h3>お電話でのご相談</h3>
+                    <p class="tel">${S.tel}</p>
+                    <p>${S.telHours}</p>
+                    <a class="btn" href="${telHref}">電話をかける</a>
+                </div>
+                <div class="contact-card">
+                    <h3>メールでのご相談</h3>
+                    <p>現地調査・お見積りは無料です。<br>屋根や電気代のことなど、お気軽にどうぞ。</p>
+                    <a class="btn" href="mailto:${S.email}">メールを送る</a>
+                </div>
             </div>
         </div>
     </section>`;
 
     container.innerHTML = `
-    ${showCta ? cta : ''}
+    ${showCta ? contact : ''}
     <footer class="site-footer">
         <div class="wrap">
-            <div class="footer-grid">
-                <div class="footer-info">
-                    <a class="brand" href="${S.root}index.html">
-                        ${S.logoSvg}
-                        <span class="brand-text">
-                            <span class="brand-jp">${S.nameJp}</span>
-                            <span class="brand-en">${S.nameEn}</span>
-                        </span>
+            <div class="footer-top">
+                <div>
+                    <a class="footer-logo" href="${S.root}index.html">
+                        <img src="${S.root}images/common/logo.svg" alt="${S.nameFull}" width="320" height="60">
                     </a>
-                    <dl>
-                        <dt>所在地</dt><dd>${S.zip}<br>${S.address}</dd>
-                        <dt>電話</dt><dd><a href="${telHref}">${S.tel}</a></dd>
-                        <dt>受付</dt><dd>${S.telHours.replace('受付 ', '')}</dd>
-                    </dl>
+                    <p class="footer-info">${S.zip} ${S.address}</p>
                 </div>
-                <div class="footer-nav">
-                    <div>
-                        <h4>SERVICE</h4>
-                        <ul>
-                            <li><a href="${S.page}service/service.html#solar">太陽光発電</a></li>
-                            <li><a href="${S.page}service/service.html#battery">家庭用蓄電池</a></li>
-                            <li><a href="${S.page}service/service.html#v2h">V2H・EV連携</a></li>
-                            <li><a href="${S.page}service/service.html#maintenance">点検・メンテナンス</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4>GUIDE</h4>
-                        <ul>
-                            <li><a href="${S.page}simulation/simulation.html">発電シミュレーション</a></li>
-                            <li><a href="${S.page}flow/flow.html">導入の流れ</a></li>
-                            <li><a href="${S.page}faq/faq.html">よくあるご質問</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4>COMPANY</h4>
-                        <ul>
-                            <li><a href="${S.root}index.html#concept">私たちの考え</a></li>
-                            <li><a href="${S.root}index.html#promise">私たちの約束</a></li>
-                            <li><a href="${S.page}news/news.html">お知らせ</a></li>
-                            <li><a href="#contact">お問い合わせ</a></li>
-                        </ul>
-                    </div>
+                <div class="footer-contact">
+                    <a href="${telHref}">Tel：${S.tel}</a>
+                    <a href="mailto:${S.email}">Mail：${S.email}</a>
+                    <small>${S.telHours}</small>
                 </div>
             </div>
+            <nav class="footer-nav" aria-label="フッターメニュー">
+                <a href="${S.root}index.html">ホーム</a>
+                <a href="${S.page}service/service.html">サービス</a>
+                <a href="${S.page}simulation/simulation.html">発電シミュレーション</a>
+                <a href="${S.page}flow/flow.html">導入の流れ</a>
+                <a href="${S.page}faq/faq.html">よくあるご質問</a>
+                <a href="${S.page}news/news.html">お知らせ</a>
+                <a href="#contact">お問い合わせ</a>
+            </nav>
             <div class="footer-bottom">
                 <span>${S.license}</span>
-                <span class="en">&copy; ${year} ${S.copyright}</span>
+                <span>&copy; ${year} ${S.copyright}</span>
             </div>
         </div>
     </footer>`;

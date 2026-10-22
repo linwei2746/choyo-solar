@@ -4,23 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>住宅用太陽光発電・蓄電池の設計施工 | 暢陽ソーラー株式会社</title>
+    <title>住宅用太陽光発電・蓄電池の設計施工 | グリーンエネルギーテクノ株式会社</title>
     <meta name="description" content="住宅用太陽光発電・家庭用蓄電池・V2Hの現地調査から設計、施工、アフターメンテナンスまで。屋根に合わせた無理のないご提案をいたします。">
     <link rel="icon" href="images/common/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Shippori+Mincho+B1:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.css">
-    <link rel="stylesheet" href="css/reset.css?v=2">
-    <link rel="stylesheet" href="css/variables.css?v=2">
-    <link rel="stylesheet" href="css/style.css?v=6">
+    <link rel="stylesheet" href="css/reset.css?v=3">
+    <link rel="stylesheet" href="css/variables.css?v=3">
+    <link rel="stylesheet" href="css/style.css?v=7">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
-    <script src="js/config.js?v=2" defer></script>
-    <script src="js/navbar.js?v=2" defer></script>
-    <script src="js/footer.js?v=3" defer></script>
-    <script src="js/main.js?v=2" defer></script>
+    <script src="js/config.js?v=3" defer></script>
+    <script src="js/navbar.js?v=3" defer></script>
+    <script src="js/footer.js?v=4" defer></script>
+    <script src="js/main.js?v=3" defer></script>
 </head>
 
 <body>
@@ -31,103 +31,111 @@
     <main>
         <!-- ============ Hero ============ -->
         <section class="hero">
-            <div class="wrap hero-grid">
-                <div class="hero-copy">
-                    <h1 class="hero-title">屋根で<span class="accent">つくり</span>、<br>家で<span class="accent">つかう</span>。</h1>
-                    <div class="hero-side">
-                        <p class="tag">RESIDENTIAL SOLAR &amp; STORAGE</p>
-                        <p>住宅用の太陽光発電と蓄電池を、屋根の調査から設計・施工・点検まで。つくった電気を、できるだけ自分の家で使い切る。そのための設備を、ご家庭ごとに組み立てます。</p>
-                        <div class="hero-actions">
-                            <a class="btn btn--sun" href="#contact">無料で屋根を診断する<span class="arrow"></span></a>
-                            <a class="btn btn--line" href="page/simulation/simulation.html">発電量を試算する</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="hero-visual">
-                    <div class="main">
-                        <img src="images/home/hero-house.jpg"
-                            alt="住宅の屋根に設置された太陽光パネル">
-                    </div>
-                    <div class="sub">
-                        <img src="images/home/hero-installer.jpg"
-                            alt="屋根の上で太陽光パネルを運ぶ施工スタッフ">
-                    </div>
-                    <p class="caption">PHOTO / IMAGE</p>
+            <div class="hero-slides">
+                <div class="hero-slide is-active"><img src="images/home/hero-1.jpg" alt="太陽光パネルを設置した住宅"></div>
+                <div class="hero-slide"><img src="images/home/hero-2.jpg" alt="庭のある住宅の屋根に並ぶ太陽光パネル" loading="lazy"></div>
+                <div class="hero-slide"><img src="images/home/hero-3.jpg" alt="屋根の上で太陽光パネルを設置するスタッフ" loading="lazy"></div>
+            </div>
+            <div class="hero-glow" aria-hidden="true"></div>
+            <div class="hero-copy">
+                <h1 class="hero-title">屋根でつくり、<br class="sp-br">家でつかう。</h1>
+                <p class="hero-company" data-site="nameFull">グリーンエネルギーテクノ株式会社</p>
+                <p class="hero-sub">住宅用太陽光発電・家庭用蓄電池・V2Hの<br class="sp-br">設計から施工、点検まで</p>
+                <p class="hero-accent">現地調査・お見積りは無料です</p>
+                <div class="hero-actions">
+                    <a class="btn btn--orange" href="#contact">無料で屋根を診断する</a>
+                    <a class="btn btn--white" href="page/simulation/simulation.html">発電量を試算する</a>
                 </div>
             </div>
-            <div class="wrap">
-                <div class="hero-foot">
-                    <span class="scroll">SCROLL</span>
-                </div>
-            </div>
+            <div class="hero-dots" aria-label="スライド切り替え"></div>
+            <p class="hero-scroll">scroll</p>
         </section>
 
-        <!-- ============ Concept ============ -->
-        <section class="sec" id="concept">
-            <div class="wrap concept-grid">
-                <div data-reveal>
-                    <p class="sec-label">Concept</p>
-                    <h2 class="sec-title">電気は、<br>「売る」より<br>「使う」時代へ。</h2>
+        <!-- ============ Intro / Concept ============ -->
+        <section class="sec intro bg-bokeh" id="concept">
+            <div class="wrap">
+                <div class="frame" data-reveal>
+                    <h2 class="frame-ttl">私たちの事業紹介</h2>
+                    <p class="frame-lead">住宅用の太陽光発電と蓄電池を、屋根の調査から設計・施工・点検まで一貫してお手伝いしています。つくった電気を、できるだけ自分の家で使い切る。そのための設備を、ご家庭ごとに組み立てます。</p>
                 </div>
-                <div class="concept-body" data-reveal>
-                    <p class="concept-statement">固定価格買取制度が始まった頃、太陽光は<em>電気を売って元を取る</em>設備でした。いまは、<em>買う電気を減らす</em>ための設備です。</p>
-                    <p>電力会社から買う電気の単価は上がり、売電の単価は下がりました。同じ1kWhなら、売るよりも自宅で使ったほうが家計への効果は大きくなります。</p>
-                    <p>だからこそ、パネルの枚数を増やすことよりも、ご家族の生活時間帯や電気の使い方を伺い、昼につくった電気を夜にも回せるよう蓄電池やエコキュートとの組み合わせまで考えることが大切だと、私たちは考えています。</p>
 
-                    <div class="compare">
-                        <p class="compare-title">1kWhあたりの価格の目安</p>
-                        <div class="compare-row">
-                            <span>2012年度の売電価格</span>
-                            <span class="compare-bar"><i style="--w:100%"></i></span>
-                            <span class="val">42円</span>
-                        </div>
-                        <div class="compare-row is-sun">
-                            <span>いま電気を買う価格</span>
-                            <span class="compare-bar"><i style="--w:73.8%"></i></span>
-                            <span class="val">31円</span>
-                        </div>
-                        <div class="compare-row">
-                            <span>いま電気を売る価格</span>
-                            <span class="compare-bar"><i style="--w:35.7%"></i></span>
-                            <span class="val">約15円</span>
-                        </div>
-                        <p class="compare-note">※2012年度：住宅用（10kW未満）の調達価格。買電：全国家庭電気製品公正取引協議会の目安単価（税込）。<br>※売電は認定年度・制度により異なるため、10年間の平均的な目安として表示しています。</p>
+                <div class="about">
+                    <div class="about-body" data-reveal>
+                        <h2 class="about-ttl">電気は「売る」より<br>「使う」時代へ</h2>
+                        <p class="about-en">Concept</p>
+                        <p class="about-statement">固定価格買取制度が始まった頃、太陽光は<em>電気を売って元を取る</em>設備でした。いまは、<em>買う電気を減らす</em>ための設備です。</p>
+                        <p>電力会社から買う電気の単価は上がり、売電の単価は下がりました。同じ1kWhなら、売るよりも自宅で使ったほうが家計への効果は大きくなります。</p>
+                        <p>だからこそ、パネルの枚数を増やすことよりも、ご家族の生活時間帯や電気の使い方を伺い、昼につくった電気を夜にも回せるよう蓄電池やエコキュートとの組み合わせまで考えることが大切だと、私たちは考えています。</p>
                     </div>
+                    <div class="about-img" data-reveal>
+                        <img src="images/home/about.jpg" alt="青空の下の太陽光パネル" loading="lazy">
+                    </div>
+                </div>
+
+                <div class="compare" data-reveal>
+                    <p class="compare-title">1kWhあたりの価格の目安</p>
+                    <div class="compare-row">
+                        <span>2012年度の売電価格</span>
+                        <span class="compare-bar"><i style="--w:100%"></i></span>
+                        <span class="val">42円</span>
+                    </div>
+                    <div class="compare-row is-sun">
+                        <span>いま電気を買う価格</span>
+                        <span class="compare-bar"><i style="--w:73.8%"></i></span>
+                        <span class="val">31円</span>
+                    </div>
+                    <div class="compare-row">
+                        <span>いま電気を売る価格</span>
+                        <span class="compare-bar"><i style="--w:35.7%"></i></span>
+                        <span class="val">約15円</span>
+                    </div>
+                    <p class="compare-note">※2012年度：住宅用（10kW未満）の調達価格。買電：全国家庭電気製品公正取引協議会の目安単価（税込）。<br>※売電は認定年度・制度により異なるため、10年間の平均的な目安として表示しています。</p>
                 </div>
             </div>
         </section>
 
         <!-- ============ Promise ============ -->
-        <section class="sec" id="promise">
+        <section class="sec bg-gray" id="promise">
             <div class="wrap">
-                <div class="sec-head" data-reveal>
-                    <p class="sec-label">Our Promise</p>
-                    <h2 class="sec-title">ご提案の前に、<br>決めていること。</h2>
+                <div class="ttl" data-reveal>
+                    <h2 class="ttl-jp">ご提案の前に、決めていること</h2>
+                    <p class="ttl-en">Our Promise</p>
                 </div>
                 <div class="promise-list" data-stagger>
                     <div class="promise-item">
+                        <span class="promise-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h7"/><circle cx="17" cy="16" r="3"/><path d="M19.2 18.2L21.5 20.5"/></svg>
+                        </span>
                         <h3>屋根に上がって確かめる</h3>
                         <p>航空写真や図面だけで見積もりは出しません。屋根材の状態、勾配、影の落ち方を、担当者が実際に確認します。</p>
                     </div>
                     <div class="promise-item">
+                        <span class="promise-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12h8"/></svg>
+                        </span>
                         <h3>向かない屋根には、向かないと言う</h3>
                         <p>北向きや影の多い屋根、築年数が経ち先に屋根の補修が必要な場合など、設置をおすすめしないこともあります。</p>
                     </div>
                     <div class="promise-item">
+                        <span class="promise-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4"/><path d="M9 11h7M9 15h7M9 19h4"/></svg>
+                        </span>
                         <h3>見積書は、項目ごとに明細を</h3>
                         <p>パネル・パワーコンディショナ・架台・工事費・申請費用を分けて記載します。「一式」でまとめることはしません。</p>
                     </div>
                     <div class="promise-item">
+                        <span class="promise-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16v12H4z"/><path d="M9 7V5h6v2"/><path d="M8.5 13l2.5 2.5L16 11"/></svg>
+                        </span>
                         <h3>申請と補助金の手続きも一緒に</h3>
                         <p>電力会社への系統連系申請や、国・自治体の補助金の確認と申請書類の準備まで、まとめてお手伝いします。</p>
                     </div>
                 </div>
             </div>
         </section>
-
     </main>
 
-    <!-- 页脚容器 -->
+    <!-- 咨询栏 + 页脚容器 -->
     <div id="footer-container"></div>
 
 </body>

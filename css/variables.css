@@ -1,29 +1,31 @@
 :root {
-    /* 色彩：和纸底色 + 墨绿 + 柿色（太阳） */
-    --paper: #f4f1ea;
-    --paper-2: #ebe5d8;
-    --paper-3: #e1d9c8;
-    --ink: #1c2420;
-    --ink-2: #4a534e;
-    --ink-3: #868c85;
-    --line: rgba(28, 36, 32, 0.14);
-    --line-strong: rgba(28, 36, 32, 0.32);
-    --sun: #d9822b;
-    --sun-deep: #b5651a;
-    --leaf: #22362c;
-    --leaf-2: #2e4a3c;
-    --white: #fffdf8;
+    /* 色彩：藏青 + 橙 + 荧光黄（标题下划线）+ 奶油底色 */
+    --navy: #13226e;
+    --navy-deep: #0b1650;
+    --navy-soft: #3b4a8f;
+    --orange: #f0842c;
+    --orange-deep: #d96d16;
+    --yellow: #ffd84a;
+    --cream: #fff8ea;
+    --cream-2: #fdf0d5;
+    --gray-bg: #efefef;
+    --text: #23293d;
+    --text-2: #4d5468;
+    --text-3: #8a8fa0;
+    --line: #d9dbe4;
+    --white: #ffffff;
 
-    /* 字体系统 */
-    --font-jp: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
-    --font-min: "Shippori Mincho B1", "Hiragino Mincho ProN", "Yu Mincho", serif;
-    --font-en: "Jost", "Zen Kaku Gothic New", sans-serif;
+    /* 字体系统：圆体 */
+    --font-jp: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", "Yu Gothic", sans-serif;
+    --font-en: "Quicksand", "Zen Maru Gothic", sans-serif;
 
     /* 布局 */
-    --header-h: 84px;
-    --wrap: 1240px;
-    --gutter: clamp(16px, 4vw, 48px);
-    --section-y: clamp(88px, 12vw, 160px);
+    --header-h: 64px;
+    --header-gap: 10px;
+    --wrap: 1120px;
+    --gutter: clamp(16px, 4vw, 40px);
+    --section-y: clamp(72px, 10vw, 120px);
+    --radius: 8px;
 
     /* 动效 */
     --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
@@ -32,6 +34,7 @@
 
 @media screen and (max-width: 768px) {
     :root {
-        --header-h: 64px;
+        --header-h: 56px;
+        --header-gap: 8px;
     }
 }
