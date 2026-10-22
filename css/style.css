@@ -472,30 +472,78 @@ body.is-menu-open {
     color: var(--orange);
 }
 
-/* 双线框标题 */
-.frame {
-    margin: 0 auto;
-    padding: clamp(36px, 6vw, 60px) clamp(16px, 4vw, 48px);
-    border: 1px solid var(--navy);
-    box-shadow: 0 0 0 3px var(--white), 0 0 0 4px var(--navy);
-    background: rgba(255, 255, 255, 0.82);
-    text-align: center;
+/* 事业介绍卡片：白色圆角卡片 + 左上角标签 + 右下角半个太阳 */
+.intro-card {
+    position: relative;
+    max-width: 960px;
+    margin: 18px auto 0;
+    padding: clamp(40px, 6vw, 64px) clamp(22px, 5vw, 64px) clamp(36px, 5vw, 56px);
+    background: var(--white);
+    border-radius: 20px;
+    box-shadow: 0 14px 40px rgba(19, 34, 110, 0.1);
+    overflow: hidden;
 }
 
-.frame-ttl {
+.intro-card::after {
+    content: "";
+    position: absolute;
+    right: -70px;
+    bottom: -70px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--yellow) 0 38%, rgba(255, 216, 74, 0.35) 39% 60%, rgba(255, 216, 74, 0.15) 61% 100%);
+    pointer-events: none;
+}
+
+.intro-tag {
+    position: absolute;
+    top: 0;
+    left: clamp(22px, 5vw, 64px);
+    padding: 6px 18px 7px;
+    background: var(--orange);
+    color: var(--white);
+    font-family: var(--font-en);
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    border-radius: 0 0 10px 10px;
+}
+
+.intro-ttl {
+    display: flex;
+    align-items: center;
+    gap: 14px;
     font-weight: 900;
-    font-size: clamp(1.4rem, 3.4vw, 2.2rem);
+    font-size: clamp(1.4rem, 3vw, 2rem);
     line-height: 1.5;
     letter-spacing: 0.06em;
     color: var(--navy);
 }
 
-.frame-lead {
-    margin-top: clamp(20px, 3vw, 36px);
+.intro-ttl::before {
+    content: "";
+    flex-shrink: 0;
+    width: 28px;
+    height: 6px;
+    border-radius: 3px;
+    background: var(--orange);
+}
+
+.intro-lead {
+    position: relative;
+    z-index: 1;
+    margin-top: clamp(16px, 2.5vw, 24px);
     font-weight: 700;
-    font-size: clamp(0.98rem, 1.6vw, 1.12rem);
-    line-height: 1.9;
-    color: var(--orange);
+    font-size: clamp(0.98rem, 1.6vw, 1.1rem);
+    line-height: 2;
+    color: var(--navy);
+}
+
+.intro-lead mark {
+    color: inherit;
+    background: linear-gradient(transparent 60%, var(--yellow) 60%);
 }
 
 /* =========================================================
@@ -1870,5 +1918,15 @@ body.is-menu-open {
         position: absolute;
         top: 0;
         left: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .intro-card::after {
+        right: -60px;
+        bottom: -60px;
+        width: 130px;
+        height: 130px;
+        opacity: 0.7;
     }
 }
