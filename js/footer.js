@@ -40,7 +40,7 @@
             <div class="footer-top">
                 <div>
                     <a class="footer-logo" href="${S.root}index.html">
-                        <img src="${S.root}images/common/logo.svg" alt="${S.nameFull}" width="320" height="60">
+                        <img src="${S.logoFull}" alt="${S.nameFull}" width="616" height="402">
                     </a>
                     <p class="footer-info">${S.zip} ${S.address}</p>
                 </div>

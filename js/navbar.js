@@ -21,7 +21,7 @@
     container.innerHTML = `
     <header class="site-header">
         <a class="brand" href="${S.root}index.html" aria-label="${S.nameFull} トップへ">
-            ${S.logoSvg}
+            <img class="brand-mark" src="${S.logoMark}" alt="" width="46" height="44">
             <span class="brand-text">
                 <span class="brand-jp">${S.nameJp}</span>
                 <span class="brand-en">${S.nameEn}</span>

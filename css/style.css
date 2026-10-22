@@ -110,9 +110,9 @@ summary {
     color: var(--navy);
 }
 
-.brand svg {
-    width: 42px;
-    height: 42px;
+.brand-mark {
+    width: 46px;
+    height: auto;
     flex-shrink: 0;
 }
 
@@ -123,17 +123,19 @@ summary {
 }
 
 .brand-jp {
-    font-weight: 900;
+    font-family: "Noto Sans JP", var(--font-jp);
+    font-weight: 700;
     font-size: 1.02rem;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.02em;
+    color: #1b2b5c;
 }
 
 .brand-en {
-    font-family: var(--font-en);
+    font-family: "Noto Sans JP", var(--font-en);
     font-weight: 700;
     font-size: 0.6rem;
-    letter-spacing: 0.06em;
-    color: var(--navy-soft);
+    letter-spacing: 0.02em;
+    color: #1b2b5c;
 }
 
 .gnav {
@@ -360,9 +362,8 @@ body.is-menu-open {
 }
 
 @media screen and (max-width: 400px) {
-    .brand svg {
-        width: 36px;
-        height: 36px;
+    .brand-mark {
+        width: 38px;
     }
 
     .brand-jp {
@@ -1814,7 +1815,7 @@ body.is-menu-open {
 }
 
 .footer-logo img {
-    width: clamp(240px, 30vw, 320px);
+    width: clamp(200px, 22vw, 260px);
     height: auto;
 }
 

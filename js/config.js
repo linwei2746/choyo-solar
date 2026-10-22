@@ -20,20 +20,6 @@ window.SITE.isSubPage = window.location.pathname.includes('/page/');
 window.SITE.root = window.SITE.isSubPage ? '../../' : './';
 window.SITE.page = window.SITE.isSubPage ? '../' : 'page/';
 
-// Logo 图形（与 images/common/logo-mark.svg 相同）：蓝绿圆弧 + 闪电 + 叶子
-window.SITE.logoSvg = `
-<svg viewBox="0 0 120 120" aria-hidden="true">
-    <defs>
-        <linearGradient id="get-ring" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#163c8c"/><stop offset="0.5" stop-color="#2274bf"/><stop offset="1" stop-color="#38b3a3"/></linearGradient>
-        <linearGradient id="get-inner" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#2667b3"/><stop offset="1" stop-color="#4dc2b0"/></linearGradient>
-        <linearGradient id="get-bolt" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3cc4a8"/><stop offset="1" stop-color="#1e82b8"/></linearGradient>
-        <linearGradient id="get-leaf" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#228f58"/><stop offset="0.6" stop-color="#5dbb6e"/><stop offset="1" stop-color="#a6dc91"/></linearGradient>
-    </defs>
-    <path d="M31.6 99.7A46 46 0 1 1 99.7 42.6L96.5 44.4A37 37 0 1 0 41.8 90.3Z" fill="url(#get-ring)"/>
-    <path d="M31.8 72.3A30 30 0 0 1 75 36L75 43.2A24 24 0 0 0 40.4 72.2Z" fill="url(#get-inner)"/>
-    <path d="M71 39Q88 21 108 25Q92 29 79 45Z" fill="url(#get-inner)"/>
-    <path d="M26 90Q48 116 84 100Q52 107 33 92Z" fill="url(#get-ring)"/>
-    <path d="M64 44L49 67H57.5L52.5 86L70 59H61.5L67 44Z" fill="url(#get-bolt)"/>
-    <path d="M66 102C64 70 84 44 114 30C114 66 98 94 66 102Z" fill="url(#get-leaf)"/>
-    <path d="M69 99Q90 72 109 37" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" opacity="0.85"/>
-</svg>`;
+// Logo 图形（从公司提供的 LOGO 原图中抠出，透明底 PNG）
+window.SITE.logoMark = `${window.SITE.root}images/common/logo-mark.png`;
+window.SITE.logoFull = `${window.SITE.root}images/common/logo-full.png`;
